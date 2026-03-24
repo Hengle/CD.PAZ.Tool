@@ -72,7 +72,16 @@ namespace CD.Unpacker
                 {
                     String m_FullPath = null;
                     String m_FileName = null;
-                    String m_FolderName = MetaStrings.iGetFolderNameByOffset(m_Folder.dwFolderNameOffset);
+                    String m_FolderName = null;
+
+                    if (m_Folder.dwFolderNameOffset != -1)
+                    {
+                        m_FolderName = MetaStrings.iGetFolderNameByOffset(m_Folder.dwFolderNameOffset);
+                    }
+                    else
+                    {
+                        m_FolderName = "";
+                    }
 
                     for (Int32 i = 0; i < m_Folder.dwTotalFiles; i++, j++)
                     {
