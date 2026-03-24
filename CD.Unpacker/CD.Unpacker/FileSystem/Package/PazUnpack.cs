@@ -128,6 +128,8 @@ namespace CD.Unpacker
                         }
                     }
                 }
+
+                TMetaStream.Dispose();
             }
         }
     }
